@@ -1,0 +1,54 @@
+.container {
+  height: 100lvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  transition: .2s;
+}
+
+.imageContainer {
+  position: relative;
+  height: 12.5%;
+  width: 100%;
+
+  >img {
+    object-fit: cover;
+  }
+}
+
+.paddingContainer {
+  padding: 0 20% 0 20%;
+}
+
+.title {
+  font-size: 36px;
+}
+
+.lastParagraph {
+  display: flex;
+  gap: 10px;
+
+  img {
+    max-height: 150px;
+  }
+}
+
+@media (max-width:480px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .paddingContainer {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .lastParagraph {
+    img {
+      max-height: 125px;
+    }
+  }
+
+}

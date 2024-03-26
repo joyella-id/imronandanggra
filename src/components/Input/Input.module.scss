@@ -1,0 +1,13 @@
+.input {
+  outline: none;
+  border: none;
+  background-color: #c9cbca;
+  text-align: center;
+  width: 100%;
+  font-size: 16px;
+  padding: 10px 20px;
+
+  @media (max-width:480px) {
+    padding: 7.5px 15px;
+  }
+}
