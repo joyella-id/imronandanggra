@@ -3,6 +3,7 @@ import css from "./TextArea.module.scss";
 
 interface TextAreaPropTypes extends HTMLProps<HTMLTextAreaElement> {
 	className?: string;
+	disabled?: boolean;
 }
 
 const TextArea: React.FC<TextAreaPropTypes> = ({
@@ -10,9 +11,11 @@ const TextArea: React.FC<TextAreaPropTypes> = ({
 	className,
 	onChange,
 	value,
+	disabled,
 }) => {
 	return (
 		<textarea
+			disabled={disabled}
 			onChange={onChange}
 			value={value}
 			style={{ width: "100%" }}

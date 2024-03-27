@@ -10,10 +10,12 @@ const Input: React.FC<InputPropTypes> = ({
 	placeholder,
 	type,
 	className,
+	disabled,
 	value,
 }) => {
 	return (
 		<input
+			disabled={disabled}
 			value={value}
 			className={`${className} ${css.input}`}
 			type={type}

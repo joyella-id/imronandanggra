@@ -5,6 +5,7 @@ import Input from "@/components/Input/Input";
 import css from "./seventh.module.scss";
 import Radio from "@/components/Radio/Radio";
 import Button from "@/components/Button/Button";
+import { toast } from "react-toastify";
 import { RsvpType, createRsvp } from "@/utils/airtable";
 import { useFetchFunction } from "@/utils/hooks";
 
@@ -25,7 +26,7 @@ const SeventhPage = () => {
 			!attendance ||
 			(attendance === AttendanceStringKey.Attendance && !count)
 		) {
-			alert("Fill all the input fields");
+			toast.error("Ada yang belum diisi");
 		} else {
 			fetchFunction(
 				() =>
@@ -35,7 +36,7 @@ const SeventhPage = () => {
 						willAttend: attendance === AttendanceStringKey.Attendance,
 					}),
 				() => {
-					alert("Terima kasih atas konfirmasinya");
+					toast.success("Terima kasih atas konfirmasinya");
 					setName("");
 					setAttendance("");
 					setCount("");
@@ -67,6 +68,7 @@ const SeventhPage = () => {
 			<div className={css.rsvp}>
 				<div className={css.rsvpTitle}>RSVP</div>
 				<Input
+					disabled={loading}
 					key="nameInput"
 					value={name}
 					onChange={(e: FormEvent<HTMLInputElement>) => {
@@ -76,6 +78,7 @@ const SeventhPage = () => {
 					placeholder="Your Name :"
 				/>
 				<Radio
+					disabled={loading}
 					value={attendance}
 					name="attendance"
 					onChange={(value) => {
@@ -96,6 +99,7 @@ const SeventhPage = () => {
 					]}
 				/>
 				<Input
+					disabled={loading}
 					key="countInput"
 					value={count}
 					onChange={(e: FormEvent<HTMLInputElement>) => {

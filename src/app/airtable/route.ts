@@ -25,6 +25,9 @@ export async function GET(request: NextRequest) {
 	const requestedData = request.nextUrl.searchParams.get("data");
 	const res = requestedData === "wishes" ? await getWishes() : await getRsvp();
 	const data = await res.json();
+	if (data.error) {
+		return NextResponse.json(data, { status: 400 });
+	}
 	return NextResponse.json(data, { status: 200 });
 }
 
@@ -40,5 +43,8 @@ export async function POST(request: NextRequest) {
 		},
 	);
 	const data = await response.json();
+	if (data.error) {
+		return NextResponse.json(data, { status: 400 });
+	}
 	return NextResponse.json(data, { status: 200 });
 }

@@ -7,6 +7,7 @@ import Button from "@/components/Button/Button";
 import { WishType, createWish } from "@/utils/airtable";
 import { useFetchFunction } from "@/utils/hooks";
 import Loading from "@/components/Loading/Loading";
+import { toast } from "react-toastify";
 import { useState, useEffect } from "react";
 
 const EightPage = () => {
@@ -22,7 +23,7 @@ const EightPage = () => {
 
 	const onSubmit = () => {
 		if (!name || !wish) {
-			alert("Fill all the input fields");
+			toast.error("Ada yang belum diisi");
 		} else {
 			createWishFunction(
 				() =>
@@ -31,7 +32,7 @@ const EightPage = () => {
 						wishes: wish,
 					}),
 				(data) => {
-					alert("Terima kasih atas ucapannya!");
+					toast.success("Terima kasih atas konfirmasinya");
 					setWishes((prev) => [data.records[0].fields, ...prev]);
 					setName("");
 					setWish("");
@@ -68,6 +69,7 @@ const EightPage = () => {
 					<span className="font-Bold">wedding gift!</span>
 				</div>
 				<Input
+					disabled={createWishLoading}
 					value={name}
 					onChange={(e) => {
 						setName(e?.currentTarget?.value);
@@ -76,6 +78,7 @@ const EightPage = () => {
 					placeholder="Your Name"
 				/>
 				<TextArea
+					disabled={createWishLoading}
 					value={wish}
 					onChange={(e) => {
 						setWish(e.currentTarget.value);
