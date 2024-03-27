@@ -1,13 +1,62 @@
 "use client";
 
+import {
+	EventHandler,
+	FormEvent,
+	FormEventHandler,
+	useEffect,
+	useState,
+} from "react";
 import Input from "@/components/Input/Input";
 import css from "./seventh.module.scss";
 import Radio from "@/components/Radio/Radio";
 import Button from "@/components/Button/Button";
+import {
+	getRsvp,
+	AirtableResponseType,
+	RsvpType,
+	useFetchFunction,
+	createRsvp,
+} from "@/utils/airtable";
+
+const AttendanceStringKey = {
+	Attendance: "Attendance",
+	Absence: "Absence",
+};
 
 const SeventhPage = () => {
+	const [name, setName] = useState("");
+	const [attendance, setAttendance] = useState("");
+	const [count, setCount] = useState("");
+
+	const { fetchFunction, loading, data, error } = useFetchFunction<RsvpType>();
+	const onSubmit = () => {
+		if (
+			!name ||
+			!attendance ||
+			(attendance === AttendanceStringKey.Attendance && !count)
+		) {
+			alert("Fill all the input fields");
+		} else {
+			fetchFunction(
+				() =>
+					createRsvp({
+						name,
+						attendanceCount: Number(count),
+						willAttend: attendance === AttendanceStringKey.Attendance,
+					}),
+				() => {
+					alert("Terima kasih atas konfirmasinya");
+					setName("");
+					setAttendance("");
+					setCount("");
+				},
+			);
+		}
+	};
+
 	return (
-		<div className={css.container} id='page-7'>
+		<div className={css.container} id="page-7">
 			<div>
 				<div className={css.attireTitle}>Attire</div>
 				<div>
@@ -28,20 +77,49 @@ const SeventhPage = () => {
 			<div className={css.line}></div>
 			<div className={css.rsvp}>
 				<div className={css.rsvpTitle}>RSVP</div>
-				<Input placeholder="Your Name :" />
+				<Input
+					key="nameInput"
+					value={name}
+					onChange={(e: FormEvent<HTMLInputElement>) => {
+						e.persist();
+						setName(e?.currentTarget?.value);
+					}}
+					placeholder="Your Name :"
+				/>
 				<Radio
+					value={attendance}
 					name="attendance"
-					onChange={(e) => {
-						console.log(e);
+					onChange={(value) => {
+						if (value === AttendanceStringKey.Absence) {
+							setCount("");
+						}
+						setAttendance(value);
 					}}
 					choices={[
-						{ label: "Attendance", value: "Attendance" },
-						{ label: "Absence", value: "Absence" },
+						{
+							label: AttendanceStringKey.Attendance,
+							value: AttendanceStringKey.Attendance,
+						},
+						{
+							label: AttendanceStringKey.Absence,
+							value: AttendanceStringKey.Absence,
+						},
 					]}
 				/>
-				<Input type="number" placeholder="Attendance Count :" />
+				<Input
+					key="countInput"
+					value={count}
+					onChange={(e: FormEvent<HTMLInputElement>) => {
+						e.persist();
+						setCount(e?.currentTarget?.value);
+					}}
+					type="number"
+					placeholder="Attendance Count :"
+				/>
 				<div className={css.buttonContainer}>
-					<Button>Submit!</Button>
+					<Button loading={loading} onClick={onSubmit}>
+						Submit!
+					</Button>
 				</div>
 			</div>
 		</div>

@@ -4,9 +4,10 @@ interface RadioProps {
 	choices: Array<{ label: string; value: string; checked?: boolean }>;
 	onChange: (value: string) => void;
 	name: string;
+	value: string;
 }
 
-const Radio: React.FC<RadioProps> = ({ choices, onChange, name }) => {
+const Radio: React.FC<RadioProps> = ({ choices, onChange, name, value }) => {
 	return (
 		<div className={css.radioContainer}>
 			{choices.map((choice) => {
@@ -14,6 +15,7 @@ const Radio: React.FC<RadioProps> = ({ choices, onChange, name }) => {
 					<label key={choice.value} className={css.container}>
 						{choice.label}
 						<input
+							checked={value === choice.value}
 							onChange={() => {
 								onChange(choice.value);
 							}}

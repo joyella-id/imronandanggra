@@ -28,6 +28,7 @@
 }
 
 .wish {
+  word-wrap: break-word;
   padding: 20px 0px;
   margin-right: 10px;
   border-bottom: 1px solid black;
@@ -46,6 +47,12 @@
     font-size: 14px;
     font-style: italic;
   }
+}
+
+.loadingContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width:480px) {

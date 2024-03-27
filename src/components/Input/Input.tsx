@@ -10,9 +10,11 @@ const Input: React.FC<InputPropTypes> = ({
 	placeholder,
 	type,
 	className,
+	value,
 }) => {
 	return (
 		<input
+			value={value}
 			className={`${className} ${css.input}`}
 			type={type}
 			onChange={onChange}

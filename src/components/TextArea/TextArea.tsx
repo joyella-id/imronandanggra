@@ -5,9 +5,16 @@ interface TextAreaPropTypes extends HTMLProps<HTMLTextAreaElement> {
 	className?: string;
 }
 
-const TextArea: React.FC<TextAreaPropTypes> = ({ placeholder, className }) => {
+const TextArea: React.FC<TextAreaPropTypes> = ({
+	placeholder,
+	className,
+	onChange,
+	value,
+}) => {
 	return (
 		<textarea
+			onChange={onChange}
+			value={value}
 			style={{ width: "100%" }}
 			maxLength={255}
 			rows={3}
