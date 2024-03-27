@@ -1,23 +1,12 @@
 "use client";
 
-import {
-	EventHandler,
-	FormEvent,
-	FormEventHandler,
-	useEffect,
-	useState,
-} from "react";
+import { FormEvent, useState } from "react";
 import Input from "@/components/Input/Input";
 import css from "./seventh.module.scss";
 import Radio from "@/components/Radio/Radio";
 import Button from "@/components/Button/Button";
-import {
-	getRsvp,
-	AirtableResponseType,
-	RsvpType,
-	useFetchFunction,
-	createRsvp,
-} from "@/utils/airtable";
+import { RsvpType, createRsvp } from "@/utils/airtable";
+import { useFetchFunction } from "@/utils/hooks";
 
 const AttendanceStringKey = {
 	Attendance: "Attendance",

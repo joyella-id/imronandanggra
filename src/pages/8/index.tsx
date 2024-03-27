@@ -4,14 +4,8 @@ import Input from "@/components/Input/Input";
 import css from "./eight.module.scss";
 import TextArea from "@/components/TextArea/TextArea";
 import Button from "@/components/Button/Button";
-import {
-	getRsvp,
-	getWishes,
-	AirtableResponseType,
-	WishType,
-	useFetchFunction,
-	createWish,
-} from "@/utils/airtable";
+import { WishType, createWish } from "@/utils/airtable";
+import { useFetchFunction } from "@/utils/hooks";
 import Loading from "@/components/Loading/Loading";
 import { useState, useEffect } from "react";
 
@@ -54,13 +48,16 @@ const EightPage = () => {
 	}, [wishes]);
 
 	useEffect(() => {
-		fetchWishFunction(getWishes, (data) => {
-			setWishes(
-				data.records.map((record) => {
-					return record.fields;
-				}),
-			);
-		});
+		fetchWishFunction(
+			() => fetch("/airtable?data=wishes"),
+			(data) => {
+				setWishes(
+					data.records.map((record) => {
+						return record.fields;
+					}),
+				);
+			},
+		);
 	}, []);
 
 	return (
