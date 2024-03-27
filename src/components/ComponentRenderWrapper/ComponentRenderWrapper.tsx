@@ -45,35 +45,34 @@ function shouldSnapTo(elm: HTMLElement) {
 
 const ComponentRenderWrapper: React.FC = () => {
 	const [rendered, setRendered] = useState(false);
-	const [shouldSnap, setShouldSnap] = useState(false);
 	useEffect(() => {
 		setRendered(true);
 	}, []);
 
-	useLayoutEffect(() => {
-		var timer: null | NodeJS.Timeout = null;
-		window.onscroll = () => {
-			if (timer !== null) {
-				clearTimeout(timer);
-			}
-			timer = setTimeout(function () {
-				Array.from(new Array(10)).forEach((_, i) => {
-					const pageNumber = i + 1;
-					const pageElement = document.getElementById(`page-${pageNumber}`);
-					const windowHeight = window.innerHeight;
-					if (pageElement) {
-						if (shouldSnapTo(pageElement).shouldSnap) {
-							pageElement.style.height = `${windowHeight}px`;
-							window.scrollTo({
-								top: shouldSnapTo(pageElement).position + window.scrollY,
-								behavior: "smooth",
-							});
-						}
-					}
-				});
-			}, 300);
-		};
-	}, []);
+	// useLayoutEffect(() => {
+	// 	var timer: null | NodeJS.Timeout = null;
+	// 	window.onscroll = () => {
+	// 		if (timer !== null) {
+	// 			clearTimeout(timer);
+	// 		}
+	// 		timer = setTimeout(function () {
+	// 			Array.from(new Array(10)).forEach((_, i) => {
+	// 				const pageNumber = i + 1;
+	// 				const pageElement = document.getElementById(`page-${pageNumber}`);
+	// 				const windowHeight = window.innerHeight;
+	// 				if (pageElement) {
+	// 					if (shouldSnapTo(pageElement).shouldSnap) {
+	// 						pageElement.style.height = `${windowHeight}px`;
+	// 						window.scrollTo({
+	// 							top: shouldSnapTo(pageElement).position + window.scrollY,
+	// 							behavior: "smooth",
+	// 						});
+	// 					}
+	// 				}
+	// 			});
+	// 		}, 300);
+	// 	};
+	// }, []);
 
 	if (!rendered) {
 		return null;
