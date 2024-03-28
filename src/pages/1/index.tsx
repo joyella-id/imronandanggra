@@ -20,7 +20,7 @@ const FirstPage = () => {
 						onClick={() => {
 							const htmlElement = document.getElementsByTagName("html")[0];
 							if (htmlElement) {
-								// htmlElement.style.overflow = "auto";
+								htmlElement.style.overflow = "auto";
 							}
 							const secondPageElement = document.getElementById("page-2");
 							if (secondPageElement) {
