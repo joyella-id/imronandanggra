@@ -12,9 +12,13 @@ const Input: React.FC<InputPropTypes> = ({
 	className,
 	disabled,
 	value,
+	pattern,
+	inputMode,
 }) => {
 	return (
 		<input
+			inputMode={inputMode}
+			pattern={pattern}
 			disabled={disabled}
 			value={value}
 			className={`${className} ${css.input}`}
@@ -26,3 +30,4 @@ const Input: React.FC<InputPropTypes> = ({
 };
 
 export default Input;
+

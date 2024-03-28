@@ -4,7 +4,7 @@ import css from "./second.module.scss";
 
 const SecondPage = () => {
 	return (
-		<div id="page-2" className={css.container}>
+		<section id="page-2" className={css.container}>
 			<div className={css.imageContainer}>
 				<Image
 					layout="fill"
@@ -27,7 +27,7 @@ const SecondPage = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

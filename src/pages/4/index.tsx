@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const FourthPage = () => {
 	return (
-		<div className={css.container} id="page-4">
+		<section className={css.container} id="page-4">
 			<div className={css.imageContainer}>
 				<Image src={roseImage} layout="fill" alt="rose" />
 			</div>
@@ -36,7 +36,7 @@ const FourthPage = () => {
 				It&apos;s not about finding someone you can live with, but finding
 				someone <span className="font-Bold">you can&apos;t live without.</span>
 			</h1>
-		</div>
+		</section>
 	);
 };
 

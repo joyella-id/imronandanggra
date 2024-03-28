@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const NinthPage = () => {
 	return (
-		<div className={css.container} id="page-9">
+		<section className={css.container} id="page-9">
 			<div className={css.imageContainer}>
 				<Image src={rose} alt="rose" layout="fill" />
 			</div>
@@ -16,7 +16,7 @@ const NinthPage = () => {
 				</div>
 				<div>See you on venue dear!</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

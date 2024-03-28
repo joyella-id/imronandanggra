@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const FirstPage = () => {
 	return (
-		<div className={css.container} id="page-1">
+		<section className={css.container} id="page-1">
 			<div className={css.imageContainer}>
 				<Image src={roseImage} layout="fill" alt="rose" />
 			</div>
@@ -20,7 +20,7 @@ const FirstPage = () => {
 						onClick={() => {
 							const htmlElement = document.getElementsByTagName("html")[0];
 							if (htmlElement) {
-								htmlElement.style.overflow = "auto";
+								// htmlElement.style.overflow = "auto";
 							}
 							const secondPageElement = document.getElementById("page-2");
 							if (secondPageElement) {
@@ -32,7 +32,7 @@ const FirstPage = () => {
 					</Button>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

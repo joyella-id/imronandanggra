@@ -62,7 +62,7 @@ const EightPage = () => {
 	}, []);
 
 	return (
-		<div className={css.container} id="page-8">
+		<section className={css.container} id="page-8">
 			<div>
 				<div className={css.title}>
 					Hi dear, give your best wishes for our{" "}
@@ -121,7 +121,7 @@ const EightPage = () => {
 					})
 				)}
 			</div>
-		</div>
+		</section>
 	);
 };
 

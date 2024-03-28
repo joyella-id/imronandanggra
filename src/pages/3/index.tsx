@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const ThirdPage = () => {
 	return (
-		<div className={css.container} id='page-3'>
+		<section className={css.container} id="page-3">
 			<div className={css.contentContainer}>
 				<div>
 					<div className={`${css.bismillahArabic} font-Semibold`}>
@@ -36,7 +36,7 @@ const ThirdPage = () => {
 					alt="imronanggra"
 				/>
 			</div>
-		</div>
+		</section>
 	);
 };
 

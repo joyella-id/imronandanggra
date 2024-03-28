@@ -4,7 +4,7 @@ import designImage from "../../assets/images/placeholder-3d-model.jpg";
 
 const FifthPage = () => {
 	return (
-		<div className={css.container} id='page-5'>
+		<section className={css.container} id="page-5">
 			<div className={`${css.paddingContainer} ${css.title}`}>
 				This is not just a Love Store, this is{" "}
 				<span className="font-Bold">Our Story.</span>
@@ -57,7 +57,7 @@ const FifthPage = () => {
 					/>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

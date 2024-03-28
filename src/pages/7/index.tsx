@@ -46,7 +46,7 @@ const SeventhPage = () => {
 	};
 
 	return (
-		<div className={css.container} id="page-7">
+		<section className={css.container} id="page-7">
 			<div>
 				<div className={css.attireTitle}>Attire</div>
 				<div>
@@ -115,7 +115,7 @@ const SeventhPage = () => {
 					</Button>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 
