@@ -1,38 +1,45 @@
 import PersonalDetail from "./PersonalDetail/PersonalDetail";
 import css from "./third.module.scss";
 import Image from "next/image";
+import style from "../invitation.module.scss";
+import images from "../../assets/images/Edit 3.jpg";
 
 const ThirdPage = () => {
 	return (
-		<section className={css.container} id="page-3">
-			<div className={css.contentContainer}>
-				<div>
-					<div className={`${css.bismillahArabic} font-Semibold`}>
-						بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-					</div>
-					<div className="font-Semibold font-14">Bismillahirrahmanirrahim</div>
+		<section className={style.container} id="page-3">
+			<br/>
+			<div className={style.contentContainer}>
+				<div className={style.arabic}>
+					<h2>بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h2>
+					<div>Bismillahirrahmanirrahim</div>
 				</div>
-				<div>TOGETHER WITH OUR FAMILIES</div>
-				<PersonalDetail
-					name="Imron Adi"
-					subtitle="The eldest son of Mr. Suyamta Yamto and Mrs. Lina Romis"
-					instagram="https://instagram.com/"
-				/>
-				<h1 className="responsive">&</h1>
-				<PersonalDetail
-					name="Okta Anggra"
-					subtitle="The youngest daughter of Mr. Muhammad Mujib and Mrs. Wiwik Khayati"
-					instagram="https://instagram.com/"
-				/>
+
+				<p>TOGETHER WITH OUR FAMILIES</p>
+				
 				<div>
+					<PersonalDetail
+						name="Imron Adi"
+						subtitle="The eldest son of Mr. Suyamta and Mrs. Guslinawati"
+						instagram="https://instagram.com/imronadil"
+					/>
+					<br />
+					<h1 className="responsive">&</h1>
+					<br />
+					<PersonalDetail
+						name="Okta Anggra"
+						subtitle="The youngest daughter of Mr. Muhammad Mujib and Mrs. Wiwik Khayati"
+						instagram="https://instagram.com/okta.anggra"
+					/>
+				</div>
+				<p>
 					REQUEST YOUR PRESENCE<br></br>at the ceremony and celebration of our
 					marriage
-				</div>
+				</p>
 			</div>
 			<div className={css.imageContainer}>
 				<Image
 					layout="fill"
-					src={"https://source.unsplash.com/random"}
+					src={images}
 					alt="imronanggra"
 				/>
 			</div>

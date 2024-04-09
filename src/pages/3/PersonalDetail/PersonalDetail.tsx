@@ -16,14 +16,14 @@ const PersonalDetail: React.FC<PersonalDetailPropTypes> = ({
 	instagram,
 }) => {
 	return (
-		<div>
-			<div className={css.nameContainer}>
+		<div className={css.nameContainer}>
+			<div >
 				<h1 className="responsive">{name}</h1>
-				<a target="_blank" href={instagram}>
-					<InstagramIcon size={20} />
-				</a>
+				<div className="font-12 responsive">{subtitle}</div>
 			</div>
-			<div className="font-14 responsive">{subtitle}</div>
+			<a target="_blank" href={instagram}>
+					<InstagramIcon size={20} />
+			</a>
 		</div>
 	);
 };

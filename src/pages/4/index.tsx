@@ -1,17 +1,19 @@
 import Button from "@/components/Button/Button";
 import Countdown from "./Countdown/Countdown";
-import roseImage from "../../assets/images/Rose -8.png";
+import roseImage from "../../assets/images/Rose petals 2.png";
 import css from "./fourth.module.scss";
 import Image from "next/image";
+import style from "../invitation.module.scss";
 
 const FourthPage = () => {
 	return (
-		<section className={css.container} id="page-4">
+		<section className={style.container} id="page-4">
 			<div className={css.imageContainer}>
 				<Image src={roseImage} layout="fill" alt="rose" />
 			</div>
-			<div>
-				<div>
+			
+			<div className={style.contentContainer}>
+				<div className={css.gap}>
 					on <span className="font-Bold">Saturday, April 20ᵗʰ 2024</span>
 				</div>
 				<Countdown />
@@ -22,8 +24,8 @@ const FourthPage = () => {
 				<div className="margin--xsmall-b margin--large-t">
 					at <span className="font-Bold">Caramel Home Kitchen</span>
 				</div>
-				<div className="font-14 responsive">
-					Jl. Pondok Jati Blok AK No. 15, Pondokjati, Pagerwojo, Buduran,
+				<div className="font-16 responsive">
+					Jl. Pondok Jati Blok AK No. 15, Pondok Jati, Pagerwojo, Buduran,
 					Kabupaten Sidoarjo, Jawa Timur, 61252
 				</div>
 				<div className={css.buttonContainer}>
@@ -31,11 +33,12 @@ const FourthPage = () => {
 						<Button>Google Maps</Button>
 					</a>
 				</div>
-			</div>
-			<h1 className="responsive">
+				<br /><br />
+				<h1 className="responsive">
 				It&apos;s not about finding someone you can live with, but finding
 				someone <span className="font-Bold">you can&apos;t live without.</span>
-			</h1>
+				</h1>
+			</div>
 		</section>
 	);
 };
