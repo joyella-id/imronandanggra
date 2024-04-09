@@ -6,8 +6,8 @@ import style from "../invitation.module.scss";
 const ThirdPage = () => {
 	return (
 		<section className={style.container} id="page-3">
+			<br/>
 			<div className={style.contentContainer}>
-				
 				<div className={style.arabic}>
 					<h2>بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h2>
 					<div>Bismillahirrahmanirrahim</div>

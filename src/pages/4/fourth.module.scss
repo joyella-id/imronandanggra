@@ -1,25 +1,12 @@
-.container {
-  height: 100lvh;
-  padding: 25% 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  transition: .2s;
-}
 
 .imageContainer {
-  position: absolute;
-  height: 600px;
-  width: 100%;
   z-index: 1;
-  top: -325px;
-  right: 0px;
-  overflow: hidden;
+  overflow: hidden !important;
+  background-color: rgba(127, 255, 212, 0.229);
 
   >img {
-    // right: -30px !important;
-    left: unset !important;
+    margin-top: -250px;
+    right: -50px;
     rotate: -65deg;
     object-fit: contain;
   }
@@ -29,21 +16,4 @@
   margin-top: 1rem;
   display: flex;
   justify-content: flex-end;
-}
-
-
-@media (max-width:480px) {
-  .container {
-    padding: 20% 15%;
-  }
-
-  .imageContainer {
-    height: 450px;
-    width: 100%;
-    top: -250px;
-
-    >img {
-      right: -10px !important;
-    }
-  }
 }

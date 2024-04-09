@@ -11,6 +11,7 @@ const FourthPage = () => {
 			<div className={css.imageContainer}>
 				<Image src={roseImage} layout="fill" alt="rose" />
 			</div>
+			
 			<div className={style.contentContainer}>
 				<div>
 					on <span className="font-Bold">Saturday, April 20ᵗʰ 2024</span>
