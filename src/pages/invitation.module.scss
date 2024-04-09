@@ -2,11 +2,10 @@
   min-height: 100lvh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   position: relative;
   transition: .2s;
   >:not(:last-child){
-    margin-bottom: 20%;
+    margin-bottom: 10lvh;
     &{
       @media (max-width:480px) {
         margin-bottom: 10%;
@@ -16,7 +15,7 @@
 }
 .contentContainer {
     padding: 0% 20%;
-    >* {
+    >*{
       margin-bottom: 2em;
       &{
         @media (max-width:480px) {
@@ -26,6 +25,7 @@
     }
     
 }
+
 .arabic {
     >:first-child{
       font-weight: 700;

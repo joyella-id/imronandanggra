@@ -1,49 +1,23 @@
-.container {
-  height: 100lvh;
-  padding: 25% 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  transition: .2s;
-}
 
 .imageContainer {
   position: absolute;
-  height: 600px;
+  display: flexbox;
+  height: 60px;
   width: 100%;
   z-index: 1;
-  top: -325px;
-  right: 0px;
-  overflow: hidden;
-
+  
   >img {
-    // right: -30px !important;
-    left: unset !important;
-    rotate: -65deg;
     object-fit: contain;
+    position: absolute;
+    margin-top: -22px;
+    margin-left: 150px;
   }
 }
-
+.gap{
+  margin-top: 40px;
+}
 .buttonContainer {
   margin-top: 1rem;
   display: flex;
   justify-content: flex-end;
-}
-
-
-@media (max-width:480px) {
-  .container {
-    padding: 20% 15%;
-  }
-
-  .imageContainer {
-    height: 450px;
-    width: 100%;
-    top: -250px;
-
-    >img {
-      right: -10px !important;
-    }
-  }
 }
