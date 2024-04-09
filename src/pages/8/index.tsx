@@ -63,11 +63,11 @@ const EightPage = () => {
 
 	return (
 		<section className={css.container} id="page-8">
-			<div>
-				<div className={css.title}>
+			<div className={css.form}>
+				<h1 className={css.title}>
 					Hi dear, give your best wishes for our{" "}
 					<span className="font-Bold">wedding gift!</span>
-				</div>
+				</h1>
 				<Input
 					disabled={createWishLoading}
 					value={name}
@@ -86,7 +86,7 @@ const EightPage = () => {
 					className="margin--xsmall-b"
 					placeholder="Your Best Wishes"
 				/>
-				<div className={css.buttonContainer}>
+				<div>
 					<Button loading={createWishLoading} onClick={onSubmit}>
 						Send!
 					</Button>

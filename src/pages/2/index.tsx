@@ -2,6 +2,7 @@
 import Image from "next/image";
 import css from "./second.module.scss";
 import style from "../invitation.module.scss";
+import images from "../../assets/images/Edit 1.jpg";
 
 const SecondPage = () => {
 	return (
@@ -9,7 +10,7 @@ const SecondPage = () => {
 			<div className={css.imageContainer}>
 				<Image
 					layout="fill"
-					src={"https://source.unsplash.com/random"}
+					src={images}
 					alt="imronanggra"
 				/>
 			</div>

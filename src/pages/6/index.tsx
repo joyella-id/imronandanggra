@@ -1,5 +1,7 @@
 import css from "./sixth.module.scss";
 import Image from "next/image";
+import style from "../invitation.module.scss";
+import images from "../../assets/images/Edit 2.jpg";
 
 const SixthPage = () => {
 	return (
@@ -7,7 +9,7 @@ const SixthPage = () => {
 			<div className={css.imageContainer}>
 				<Image
 					layout="fill"
-					src={"https://source.unsplash.com/random"}
+					src={images}
 					alt="imronanggra"
 				/>
 			</div>

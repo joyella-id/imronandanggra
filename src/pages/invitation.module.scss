@@ -5,7 +5,7 @@
   position: relative;
   transition: .2s;
   >:not(:last-child){
-    margin-bottom: 20%;
+    margin-bottom: 10lvh;
     &{
       @media (max-width:480px) {
         margin-bottom: 10%;

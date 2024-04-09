@@ -19,6 +19,7 @@
 
 .textContainer {
   display: flex;
+ 
   flex-direction: column;
   justify-content: flex-end;
   padding-bottom: 20%;
@@ -27,10 +28,12 @@
   color: white;
 
   >:first-child {
-    font-size: 36px;
+    font-size: 24px;
+    font-family: 'Janna LT', serif !important;
   }
 
   >:nth-child(2) {
+    font-family: 'Janna LT', serif !important;
     margin-top: 10px;
     font-weight: 300;
   }
@@ -44,7 +47,7 @@
   @media (max-width: 480px) {
 
     >:first-child {
-      font-size: 28px;
+      font-size: 20px;
     }
 
     >:nth-child(2) {

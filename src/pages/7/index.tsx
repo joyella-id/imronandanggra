@@ -49,10 +49,10 @@ const SeventhPage = () => {
 		<section className={css.container} id="page-7">
 			<div>
 				<div className={css.attireTitle}>Attire</div>
-				<div>
+				<p>
 					We kindly encourage our guests to wear these colors for our special
 					day
-				</div>
+				</p>
 				<div className={css.colorsContainer}>
 					<div className={`${css.black1} ${css.tile}`}></div>
 					<div className={`${css.black2} ${css.tile}`}></div>
@@ -60,9 +60,9 @@ const SeventhPage = () => {
 					<div className={`${css.black4} ${css.tile}`}></div>
 					<div className={`${css.black5} ${css.tile}`}></div>
 				</div>
-				<div>
+				<p>
 					Black and White <span className="font-Bold">dresscode</span>
-				</div>
+				</p>
 			</div>
 			<div className={css.line}></div>
 			<div className={css.rsvp}>
@@ -109,7 +109,7 @@ const SeventhPage = () => {
 					type="number"
 					placeholder="Attendance Count :"
 				/>
-				<div className={css.buttonContainer}>
+				<div >
 					<Button loading={loading} onClick={onSubmit}>
 						Submit!
 					</Button>

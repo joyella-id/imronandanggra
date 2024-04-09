@@ -10,11 +10,12 @@
 
 .imageContainer {
   position: relative;
-  height: 12.5%;
+  height: 20vh;
   width: 100%;
 
   >img {
     object-fit: cover;
+    object-position: 0px -10px;
   }
 }
 
@@ -28,10 +29,12 @@
 
 .lastParagraph {
   display: flex;
-  gap: 10px;
+  gap: 20px;
 
   img {
-    max-height: 150px;
+    object-fit:fill;
+   max-width:110px;
+   max-height: 250px;
   }
 }
 
@@ -51,4 +54,11 @@
     }
   }
 
+}
+.story{
+  position: relative !important;
+  line-height: 2em;
+  >:not(:last-child){
+    margin-bottom: 20px;
+  }
 }
