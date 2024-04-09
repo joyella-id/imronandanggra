@@ -3,14 +3,15 @@ import Countdown from "./Countdown/Countdown";
 import roseImage from "../../assets/images/Rose -8.png";
 import css from "./fourth.module.scss";
 import Image from "next/image";
+import style from "../invitation.module.scss";
 
 const FourthPage = () => {
 	return (
-		<section className={css.container} id="page-4">
+		<section className={style.container} id="page-4">
 			<div className={css.imageContainer}>
 				<Image src={roseImage} layout="fill" alt="rose" />
 			</div>
-			<div>
+			<div className={style.contentContainer}>
 				<div>
 					on <span className="font-Bold">Saturday, April 20ᵗʰ 2024</span>
 				</div>
@@ -31,11 +32,11 @@ const FourthPage = () => {
 						<Button>Google Maps</Button>
 					</a>
 				</div>
-			</div>
-			<h1 className="responsive">
+				<h2 className="responsive">
 				It&apos;s not about finding someone you can live with, but finding
 				someone <span className="font-Bold">you can&apos;t live without.</span>
-			</h1>
+				</h2>
+			</div>
 		</section>
 	);
 };

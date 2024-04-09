@@ -1,40 +1,10 @@
-.container {
-  height: 100lvh;
-  transition: .2s;
-  display: flex;
-  flex-direction: column;
-
-}
-
-.contentContainer {
-  flex-grow: 1;
-  padding: 10% 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
 .imageContainer {
-  height: 30%;
-  margin-bottom: 5svh;
+  height: 30svh;
+  // margin-bottom: 5svh;
   position: relative;
 
   >img {
     object-fit: cover;
-  }
-}
-
-.bismillahArabic {
-  font-size: 38px;
-  margin-bottom: 5px;
-}
-
-@media (max-width:480px) {
-  .bismillahArabic {
-    font-size: 26px;
-  }
-
-  .contentContainer {
-    padding: 7.5% 15%;
   }
 }
