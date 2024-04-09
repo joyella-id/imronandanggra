@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
 import css from "./second.module.scss";
+import style from "../invitation.module.scss";
 
 const SecondPage = () => {
 	return (
-		<section id="page-2" className={css.container}>
+		<section id="page-2" className={style.container}>
 			<div className={css.imageContainer}>
 				<Image
 					layout="fill"
@@ -12,19 +13,17 @@ const SecondPage = () => {
 					alt="imronanggra"
 				/>
 			</div>
-			<div className={css.contentContainer}>
+			<div className={style.contentContainer}>
+				<div className={style.arabic}>
+					<h2>فَجَعَلَ مِنْهُ الزَّوْجَيْنِ الذَّكَرَ وَالْاُنْثٰى</h2>
+					<p>Faja&apos;ala minhu al-zawjayni al-dhakar wa al-untha</p>
+				</div>
 				<div>
-					<div className={css.arabic}>
-						<div>فَجَعَلَ مِنْهُ الزَّوْجَيْنِ الذَّكَرَ وَالْاُنْثٰى</div>
-						<div>Faja&apos;ala minhu al-zawjayni al-dhakar wa al-untha</div>
-					</div>
-					<div className={css.indonesia}>
-						<div>
-							Then Allah made from its mate, and He produced from it the two
-							sexes, the male and the female.
-						</div>
-						<div>(Quran, Surah Al-Qiyamah: 39)</div>
-					</div>
+					<p>
+						Then Allah made from its mate, and He produced from it the two
+						sexes, the male and the female.
+					</p>
+					<p class="font-12">(Quran, Surah Al-Qiyamah: 39)</p>
 				</div>
 			</div>
 		</section>

@@ -1,16 +1,22 @@
 .nameContainer {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-
+  
+  
   svg {
     cursor: pointer;
-    height: 20px;
-    width: 20px;
+    height: 24px;
+    width: 24px;
+    margin-top: 14px;
 
     @media (max-width:480px) {
-      height: 15px;
-      width: 15px;
+      margin-top: 12px;
+      height: 16px;
+      width: 16px;
     }
+  }
+
+  > div{
+    padding-right: 24px;
   }
 }

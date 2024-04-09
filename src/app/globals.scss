@@ -1,10 +1,16 @@
 @import url("https://use.typekit.net/rcp4lic.css");
-
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+@font-face {
+    font-family: 'Janna LT';
+	font-style: bold;
+	font-weight: 700;
+    src: url(/src/assets/font/Janna\ LT\ Bold.ttf);
+}
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "source-serif-pro", serif;
+	font-family: "Source Serif 4", serif;
 	font-weight: 400;
 	font-style: normal;
 	-webkit-tap-highlight-color: transparent;
@@ -49,7 +55,13 @@ input[type=number] {
 }
 
 p {
-	font-size: 20px;
+	font-size: 16px;
+	line-height: 2em;
+	& {
+		@media (max-width:480px) {
+			font-size: 14px;
+		}
+	}
 }
 
 h1 {
@@ -58,6 +70,16 @@ h1 {
 	&.responsive {
 		@media (max-width:480px) {
 			font-size: 28px;
+		}
+	}
+}
+
+h2 {
+	font-size: 24px;
+
+	&.responsive {
+		@media (max-width:480px) {
+			font-size: 20px;
 		}
 	}
 }
@@ -103,6 +125,16 @@ h1 {
 	&.responsive {
 		@media (max-width:480px) {
 			font-size: 18px;
+		}
+	}
+}
+
+.font-38 {
+	font-size: 38px;
+
+	&.responsive {
+		@media (max-width:480px) {
+			font-size: 26px;
 		}
 	}
 }
