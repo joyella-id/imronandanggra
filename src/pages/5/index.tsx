@@ -8,7 +8,7 @@ const FifthPage = () => {
 	return (
 		<section className={style.container} id="page-5">
 			<div className={`${style.contentContainer} ${css.title}`}>
-				This is not just a Love Store, this is{" "}
+				This is not just a Love Story, this is{" "}
 				<span className="font-Bold">Our Story.</span>
 			</div>
 			<div className={css.imageContainer}>
