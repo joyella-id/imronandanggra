@@ -8,11 +8,7 @@ const SecondPage = () => {
 	return (
 		<section id="page-2" className={style.container}>
 			<div className={css.imageContainer}>
-				<Image
-					layout="fill"
-					src={images}
-					alt="imronanggra"
-				/>
+				<Image layout="fill" src={images} alt="imronanggra" />
 			</div>
 			<div className={style.contentContainer}>
 				<div className={style.arabic}>
@@ -24,7 +20,7 @@ const SecondPage = () => {
 						Then Allah made from its mate, and He produced from it the two
 						sexes, the male and the female.
 					</p>
-					<p class="font-12">(Quran, Surah Al-Qiyamah: 39)</p>
+					<p className="font-12">(Quran, Surah Al-Qiyamah: 39)</p>
 				</div>
 			</div>
 		</section>
