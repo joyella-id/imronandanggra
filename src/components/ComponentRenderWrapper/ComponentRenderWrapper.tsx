@@ -49,6 +49,13 @@ const ComponentRenderWrapper: React.FC = () => {
 		setRendered(true);
 	}, []);
 
+	useLayoutEffect(() => {
+		const html = document.getElementsByTagName("html")[0];
+		if (html) {
+			html.scrollTo({ top: 0 });
+		}
+	}, []);
+
 	// useLayoutEffect(() => {
 	// 	var timer: null | NodeJS.Timeout = null;
 	// 	window.onscroll = () => {
