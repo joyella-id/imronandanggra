@@ -9,7 +9,7 @@ const FourthPage = () => {
 	return (
 		<section className={style.container} id="page-4">
 			<div className={css.imageContainer}>
-				<Image src={roseImage} layout="fill" alt="rose" />
+				{/* <Image src={roseImage} layout="fill" alt="rose" /> */}
 			</div>
 			
 			<div className={style.contentContainer}>
