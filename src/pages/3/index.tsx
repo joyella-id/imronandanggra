@@ -18,7 +18,7 @@ const ThirdPage = () => {
 				
 				<div>
 					<PersonalDetail
-						name="Imron Adi"
+						name="Imron Adi (Dio)"
 						subtitle="The eldest son of Mr. Suyamta and Mrs. Guslinawati"
 						instagram="https://instagram.com/imronadil"
 					/>
@@ -26,7 +26,7 @@ const ThirdPage = () => {
 					<h1 className="responsive">&</h1>
 					<br />
 					<PersonalDetail
-						name="Okta Anggra"
+						name="Okta Anggra (Reni)"
 						subtitle="The youngest daughter of Mr. Muhammad Mujib and Mrs. Wiwik Khayati"
 						instagram="https://instagram.com/okta.anggra"
 					/>
