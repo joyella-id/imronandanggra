@@ -17,8 +17,8 @@ const PersonalDetail: React.FC<PersonalDetailPropTypes> = ({
 }) => {
 	return (
 		<div className={css.nameContainer}>
-			<div >
-				<h1 className="responsive">{name}</h1>
+			<div>
+				<h2 className="responsive">{name}</h2>
 				<div className="font-12 responsive">{subtitle}</div>
 			</div>
 			<a target="_blank" href={instagram}>
