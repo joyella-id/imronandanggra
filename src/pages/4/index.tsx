@@ -18,8 +18,8 @@ const FourthPage = () => {
 				</div>
 				<Countdown />
 				<div>
-					from <span className="font-Bold">08.00 am</span> to{" "}
-					<span className="font-Bold">12.00 am</span>
+					from <span className="font-Bold">11.00 am</span> to{" "}
+					<span className="font-Bold">14.00 am</span>
 				</div>
 				<div className="margin--xsmall-b margin--large-t">
 					at <span className="font-Bold">Caramel Home Kitchen</span>
