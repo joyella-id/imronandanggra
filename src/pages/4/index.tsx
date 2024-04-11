@@ -19,7 +19,7 @@ const FourthPage = () => {
 				<Countdown />
 				<div>
 					from <span className="font-Bold">11.00 am</span> to{" "}
-					<span className="font-Bold">14.00 am</span>
+					<span className="font-Bold">02.30 pm</span>
 				</div>
 				<div className="margin--xsmall-b margin--large-t">
 					at <span className="font-Bold">Caramel Home Kitchen</span>
