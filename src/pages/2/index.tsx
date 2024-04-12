@@ -2,7 +2,7 @@
 import Image from "next/image";
 import css from "./second.module.scss";
 import style from "../invitation.module.scss";
-import images from "../../assets/images/Edit 4.jpg";
+import images from "../../assets/images/Edit 6.jpg";
 
 const SecondPage = () => {
 	return (
