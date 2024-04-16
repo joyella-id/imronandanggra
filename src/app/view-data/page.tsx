@@ -34,6 +34,13 @@ const ViewData = () => {
 		);
 	}, []);
 
+	const differentRsvp = rsvp.filter((rsvp) => rsvp.willAttend).length;
+	const totalPerson = rsvp.reduce<number>((a, c) => {
+		return a + (c.attendanceCount || 0);
+	}, 0);
+
+	console.log(differentRsvp, totalPerson);
+
 	return (
 		<div className={styles.container}>
 			{fetchWishesLoading || fetchRsvpLoading ? (
@@ -43,6 +50,10 @@ const ViewData = () => {
 			) : (
 				<div>
 					<h1>RSVP</h1>
+					<div>{differentRsvp} different people RSVP(ed)</div>
+					<div className={styles.summary}>
+						{totalPerson} total attendance count
+					</div>
 					<div className={styles.rsvpContainer}>
 						{rsvp.map((singleRsvp) => (
 							<div key={singleRsvp.id} className={styles.singleRsvp}>
