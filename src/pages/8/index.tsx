@@ -104,7 +104,7 @@ const EightPage = () => {
 						const daysAgo = Math.floor(durationFromToday / 86400000);
 						const shownDate =
 							daysAgo === 0
-								? "Less thn a day ago"
+								? "Less than a day ago"
 								: daysAgo > 0
 								? `${daysAgo} day(s) ago`
 								: `${daysAgo * -1} day(s) later`;
