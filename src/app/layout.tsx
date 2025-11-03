@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
+import ogImage from "./opengraph-image.jpg";
+import twImage from "./twitter-image.jpg";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://imrondananggra.ourjoy.id"),
 	title: "Imron & Anggra Wedding Invitation",
 	description: "Invitation for Imron & Anggra's wedding! Powered by ourjoy.id",
 	openGraph: {
@@ -12,6 +15,22 @@ export const metadata: Metadata = {
 		description:
 			"Invitation for Imron & Anggra's wedding! Powered by ourjoy.id",
 		type: "website",
+		images: [
+			{
+				url: ogImage.src,
+				width: ogImage.width,
+				height: ogImage.height,
+			},
+		],
+	},
+	twitter: {
+		images: [
+			{
+				url: ogImage.src,
+				width: ogImage.width,
+				height: ogImage.height,
+			},
+		],
 	},
 };
 
