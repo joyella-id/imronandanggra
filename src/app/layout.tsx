@@ -6,12 +6,14 @@ import twImage from "./twitter-image.jpg";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const title = "The Wedding of Imron & Anggra";
+
 export const metadata: Metadata = {
 	metadataBase: new URL("https://imrondananggra.ourjoy.id"),
-	title: "Imron & Anggra Wedding Invitation",
+	title: title,
 	description: "Invitation for Imron & Anggra's wedding! Powered by ourjoy.id",
 	openGraph: {
-		title: "Imron & Anggra Wedding Invitation",
+		title: title,
 		description:
 			"Invitation for Imron & Anggra's wedding! Powered by ourjoy.id",
 		type: "website",
@@ -24,6 +26,7 @@ export const metadata: Metadata = {
 		],
 	},
 	twitter: {
+		card: "summary_large_image",
 		images: [
 			{
 				url: ogImage.src,
