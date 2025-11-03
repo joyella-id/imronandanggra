@@ -10,26 +10,23 @@ const ViewData = () => {
 	const [wishes, setWishes] = useState<WishType[]>([]);
 	const [rsvp, setRsvp] = useState<RsvpType[]>([]);
 	const { fetchFunction: fetchWishFunction, loading: fetchWishesLoading } =
-		useFetchFunction<WishType>();
+		useFetchFunction<WishType[]>();
 
 	const { fetchFunction: fetchRsvpFunction, loading: fetchRsvpLoading } =
-		useFetchFunction<RsvpType>();
+		useFetchFunction<RsvpType[]>();
 
 	useEffect(() => {
 		fetchWishFunction(
-			() => fetch("/airtable?data=wishes"),
+			() => fetch("/supabase/wishes"),
 			(data) => {
-				setWishes(
-					data.records.map((record) => {
-						return record.fields;
-					}),
-				);
+				setWishes(data);
 			},
 		);
+
 		fetchRsvpFunction(
-			() => fetch("/airtable?data=rsvp"),
+			() => fetch("/supabase/attendance"),
 			(data) => {
-				setRsvp(data.records.map((record) => record.fields));
+				setRsvp(data);
 			},
 		);
 	}, []);
@@ -38,8 +35,6 @@ const ViewData = () => {
 	const totalPerson = rsvp.reduce<number>((a, c) => {
 		return a + (c.attendanceCount || 0);
 	}, 0);
-
-	console.log(differentRsvp, totalPerson);
 
 	return (
 		<div className={styles.container}>
@@ -76,7 +71,7 @@ const ViewData = () => {
 					<h1>Wishes</h1>
 					<div className={styles.rsvpContainer}>
 						{wishes.map((singleWishes) => {
-							const date = new Date(singleWishes.createdAt || "");
+							const date = new Date(singleWishes.created_at || "");
 							const durationFromToday = Date.now() - date.getTime();
 							const daysAgo = Math.floor(durationFromToday / 86400000);
 							const shownDate =

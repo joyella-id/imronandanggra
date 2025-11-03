@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FetchStateType, AirtableResponseType } from "./airtable";
+import { FetchStateType } from "./airtable";
 
 export const useFetchFunction = <T>() => {
 	const [fetchState, setFetchState] = useState<FetchStateType<T>>({
@@ -10,12 +10,11 @@ export const useFetchFunction = <T>() => {
 
 	const fetchFunction = (
 		customFetch: () => Promise<Response>,
-		onSuccess?: (data: AirtableResponseType<T>) => void,
+		onSuccess?: (data: T) => void,
 		onError?: (error: Error) => void,
 	) => {
 		setFetchState((prev) => ({ ...prev, loading: true }));
 		try {
-			console.log("try oi");
 			customFetch()
 				.then((res) => {
 					res

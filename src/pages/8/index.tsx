@@ -16,10 +16,10 @@ const EightPage = () => {
 	const [wish, setWish] = useState("");
 
 	const { fetchFunction: createWishFunction, loading: createWishLoading } =
-		useFetchFunction<WishType>();
+		useFetchFunction<WishType[]>();
 
 	const { fetchFunction: fetchWishFunction, loading: fetchWishesLoading } =
-		useFetchFunction<WishType>();
+		useFetchFunction<WishType[]>();
 
 	const onSubmit = () => {
 		if (!name || !wish) {
@@ -33,7 +33,7 @@ const EightPage = () => {
 					}),
 				(data) => {
 					toast.success("Terima kasih atas konfirmasinya");
-					setWishes((prev) => [data.records[0].fields, ...prev]);
+					setWishes((prev) => [...data, ...prev]);
 					setName("");
 					setWish("");
 				},
@@ -50,13 +50,9 @@ const EightPage = () => {
 
 	useEffect(() => {
 		fetchWishFunction(
-			() => fetch("/airtable?data=wishes"),
+			() => fetch("/supabase/wishes"),
 			(data) => {
-				setWishes(
-					data.records.map((record) => {
-						return record.fields;
-					}),
-				);
+				setWishes(data);
 			},
 		);
 	}, []);
@@ -99,7 +95,7 @@ const EightPage = () => {
 					</div>
 				) : (
 					wishes.map((wish, index) => {
-						const date = new Date(wish.createdAt || "");
+						const date = new Date(wish.created_at || "");
 						const durationFromToday = Date.now() - date.getTime();
 						const daysAgo = Math.floor(durationFromToday / 86400000);
 						const shownDate =

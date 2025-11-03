@@ -2,7 +2,7 @@ export type WishType = {
 	id?: number;
 	name: string;
 	wishes: string;
-	createdAt?: string;
+	created_at?: string;
 };
 
 export type RsvpType = {
@@ -26,15 +26,15 @@ export type FetchStateType<T> = {
 };
 
 export const createRsvp = (data: RsvpType) => {
-	return fetch("/airtable?data=rsvp", {
+	return fetch("/supabase/attendance", {
 		method: "POST",
-		body: JSON.stringify({ records: [{ fields: data }] }),
+		body: JSON.stringify(data),
 	});
 };
 
 export const createWish = (data: WishType) => {
-	return fetch("/airtable?data=wishes", {
+	return fetch("/supabase/wishes", {
 		method: "POST",
-		body: JSON.stringify({ records: [{ fields: data }] }),
+		body: JSON.stringify(data),
 	});
 };
