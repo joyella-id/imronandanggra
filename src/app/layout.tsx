@@ -5,8 +5,14 @@ import "./globals.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "Imron & Anggra Invitation",
-	description: "Invitation for Imron & Anggra's wedding!",
+	title: "Imron & Anggra Wedding Invitation",
+	description: "Invitation for Imron & Anggra's wedding! Powered by ourjoy.id",
+	openGraph: {
+		title: "Imron & Anggra Wedding Invitation",
+		description:
+			"Invitation for Imron & Anggra's wedding! Powered by ourjoy.id",
+		type: "website",
+	},
 };
 
 export default function RootLayout({
