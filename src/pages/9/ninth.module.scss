@@ -1,64 +1,102 @@
 .container {
-  height: 100lvh;
-  position: relative;
-  overflow: hidden;
-  transition: .2s;
+	height: 100lvh;
+	position: relative;
+	overflow: hidden;
+	transition: 0.2s;
 }
 
 .textContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: 100%;
-  width: 100%;
-  padding: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	height: 100%;
+	width: 100%;
+	padding: 20%;
 
-  >:first-child {
-    font-size: 22px;
-    font-weight: 600;
-  }
+	> :first-child {
+		font-size: 22px;
+		font-weight: 600;
+	}
 
-  >:nth-child(2) {
-    font-size: 40px;
-    margin-bottom: 20px;
+	> :nth-child(2) {
+		font-size: 40px;
+		margin-bottom: 20px;
 
-    * {
-      font-weight: 600;
-    }
-  }
+		* {
+			font-weight: 600;
+		}
+	}
 }
 
 .imageContainer {
-  z-index: -1;
-  position: absolute;
-  width: 160%;
-  height: 140%;
-  left: 7.5%;
-  top: 5%;
-  rotate: 5deg;
+	z-index: -1;
+	position: absolute;
+	width: 160%;
+	height: 140%;
+	left: 7.5%;
+	top: 5%;
+	rotate: 5deg;
 
-  >img {
-    object-fit: cover;
-    position: absolute;
-  }
+	> img {
+		object-fit: cover;
+		position: absolute;
+	}
 }
 
-
 @media (max-width: 480px) {
-  .textContainer {
-    padding: 20% 10%;
+	.textContainer {
+		padding: 20% 10%;
 
-    >:first-child {
-      font-size: 18px;
-    }
+		> :first-child {
+			font-size: 18px;
+		}
 
-    >:nth-child(2) {
-      font-size: 36px;
-    }
-  }
+		> :nth-child(2) {
+			font-size: 36px;
+		}
+	}
 
-  .imageContainer {
-    width: 165%;
-    height: 130%;
-  }
+	.imageContainer {
+		width: 165%;
+		height: 130%;
+	}
+}
+
+.footer {
+	height: 130px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	width: 100%;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.logoContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.circleIcon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 45px;
+	width: 45px;
+	background-color: #5d5d5d;
+	cursor: pointer;
+	border-radius: 50%;
+	transition: 0.2s;
+
+	&:hover {
+		background-color: rgb(63, 63, 63);
+	}
+}
+
+.divider {
+	height: 50%;
+	width: 2px;
+	background-color: #5d5d5d;
 }
