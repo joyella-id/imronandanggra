@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 const title = "The Wedding of Imron & Anggra";
 const description =
-	"Invitation for Imron & Anggra's wedding! Powered by ourjoy.id";
+	"We will be getting married on April 20th 2024. Join us in celebrating the happiest day of our life! Powered by Ourjoy.id";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://imrondananggra.ourjoy.id"),
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
 	twitter: {
 		card: "summary_large_image",
 		description,
-		site: "ourjoy.id",
-		creator: "ourjoy.id",
+		site: "https://imrondananggra.ourjoy.id",
+		creator: "https://imrondananggra.ourjoy.id",
 		images: [
 			{
 				url: ogImage.src,
