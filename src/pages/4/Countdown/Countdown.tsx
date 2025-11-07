@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 const useCountdown = (date: Date) => {
 	const [timeLeft, setTimeLeft] = useState<number>(
-		Math.abs(date.getTime() - Date.now()),
+		date.getTime() - Date.now(),
 	);
 
 	useEffect(() => {
@@ -58,6 +58,8 @@ const Countdown = () => {
 	const weddingDate = new Date("2024-04-20");
 	const timeLeftInMs = useCountdown(weddingDate);
 	const timeLeft = msToTimeObj(timeLeftInMs);
+
+	console.log("rendered", timeLeft);
 
 	if (!rendered) {
 		return null;
