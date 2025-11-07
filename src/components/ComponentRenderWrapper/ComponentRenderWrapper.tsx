@@ -43,49 +43,25 @@ function shouldSnapTo(elm: HTMLElement) {
 	return { shouldSnap: false, position: 0 };
 }
 
-const ComponentRenderWrapper: React.FC = () => {
-	const [rendered, setRendered] = useState(false);
+const Pages = () => {
 	useEffect(() => {
-		setRendered(true);
-	}, []);
-
-	useLayoutEffect(() => {
-		const html = document.getElementsByTagName("html")[0];
-		if (html) {
-			html.scrollTo({ top: 0 });
+		const firstPageElement = document.getElementById("page-1");
+		if (firstPageElement) {
+			firstPageElement.scrollIntoView({ behavior: "smooth" });
+		}
+		const scrollContainerElement = document.getElementById("scrollContainer");
+		if (scrollContainerElement) {
+			scrollContainerElement.style.overflow = "hidden";
 		}
 	}, []);
 
-	// useLayoutEffect(() => {
-	// 	var timer: null | NodeJS.Timeout = null;
-	// 	window.onscroll = () => {
-	// 		if (timer !== null) {
-	// 			clearTimeout(timer);
-	// 		}
-	// 		timer = setTimeout(function () {
-	// 			Array.from(new Array(10)).forEach((_, i) => {
-	// 				const pageNumber = i + 1;
-	// 				const pageElement = document.getElementById(`page-${pageNumber}`);
-	// 				const windowHeight = window.innerHeight;
-	// 				if (pageElement) {
-	// 					if (shouldSnapTo(pageElement).shouldSnap) {
-	// 						pageElement.style.height = `${windowHeight}px`;
-	// 						window.scrollTo({
-	// 							top: shouldSnapTo(pageElement).position + window.scrollY,
-	// 							behavior: "smooth",
-	// 						});
-	// 					}
-	// 				}
-	// 			});
-	// 		}, 300);
-	// 	};
-	// }, []);
-
-	if (!rendered) {
-		return null;
-	}
 	return (
-		<>
+		<div
+			id="scrollContainer"
+			style={{
+				height: "100svh",
+			}}
+		>
 			<FirstPage />
 			<SecondPage />
 			<ThirdPage />
@@ -95,8 +71,21 @@ const ComponentRenderWrapper: React.FC = () => {
 			<SeventhPage />
 			<EightPage />
 			<NinthPage />
-		</>
+		</div>
 	);
+};
+
+const ComponentRenderWrapper: React.FC = () => {
+	const [rendered, setRendered] = useState(false);
+
+	useEffect(() => {
+		setRendered(true);
+	}, []);
+
+	if (!rendered) {
+		return null;
+	}
+	return <Pages />;
 };
 
 export default ComponentRenderWrapper;
